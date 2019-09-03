@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Button, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const UserItem = ({ user: { login, avatar_url, html_url } }) => {
   // Destructuring
@@ -17,9 +18,9 @@ const UserItem = ({ user: { login, avatar_url, html_url } }) => {
         />
         <h3>{login}</h3>
         <div>
-          <Button href={html_url} variant='dark' size='sm' className='my-1'>
+          <Link to={`/user/${login}`} className='btn btn-dark btn-sm mb-1'>
             More
-          </Button>
+          </Link>
         </div>
       </div>
     </Col>
